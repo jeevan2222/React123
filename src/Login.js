@@ -12,6 +12,8 @@ function App() {
     password: "",
   });
 
+  //
+
   const { name, email, password } = formData;
 
   const handleInputChange = (e) => {
