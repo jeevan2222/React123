@@ -1,0 +1,61 @@
+.body {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f4;
+}
+
+.header {
+  background: linear-gradient(to right, #ff0000, #0000ff);
+  color: rgb(28, 14, 14);
+  text-align: center;
+  font-size: larger;
+  display: flex;
+  padding: 1em;
+  width: 100%;
+  height: 100px;
+}
+
+.main {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 120px;
+  margin-left: 420px;
+  width: 300px;
+}
+
+.h2 {
+  color: #333;
+}
+
+p {
+  color: #666;
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1em;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+.work {
+  padding-top: 45px;
+  margin-bottom: 0px;
+  color: #e70808;
+  font-size: large;
+}
+.page {
+  float: left;
+  padding-left: 450px;
+}

@@ -3,8 +3,10 @@ import React, { useState } from "react";
 import validation from "./utils/validation";
 import axios from "axios";
 import Dashboard from "./Dashboard";
+import { useNavigate } from "react-router-dom";
+
 function App() {
-  // State to manage form inputs
+  const navigate = useNavigate();
   const [errorMessage, seterrorMessage] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
@@ -12,7 +14,9 @@ function App() {
     password: "",
   });
 
-  //
+  function navi(username) {
+    navigate("/dashboard", { state: { username } });
+  }
 
   const { name, email, password } = formData;
 
@@ -22,22 +26,28 @@ function App() {
       [e.target.name]: e.target.value,
     });
   };
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     const message = validation(formData);
 
     if (!message) {
-      const createUser = await axios({
-        method: "post",
-        url: "https://jeevankumarnode.onrender.com/create",
-        data: {
-          name: formData.name,
-          email: formData.email,
-          password: formData.password,
-        },
-      });
-      const userdata = createUser.data;
-      console.log("?????????????", userdata);
+      try {
+        const createUser = await axios({
+          method: "post",
+          url: "https://jeevankumarnode.onrender.com/create",
+          data: {
+            name: formData.name,
+            email: formData.email,
+            password: formData.password,
+          },
+        });
+
+        const userdata = createUser.data;
+        navi(userdata.name); // Pass the created username to the navi function
+      } catch (error) {
+        console.error("Error during registration:", error);
+      }
     } else {
       seterrorMessage(message);
     }

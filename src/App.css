@@ -9,7 +9,7 @@
 }
 
 .App-header {
-  background-color: #000000;
+  background-color: #889735;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -28,7 +28,7 @@
 .inputdata {
   /* padding: 5px;
    */
-  background-color: antiquewhite;
+  background-color: rgb(17, 20, 211);
   border-radius: 5px;
   height: 300px;
   width: 250px;
