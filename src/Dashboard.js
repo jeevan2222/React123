@@ -24,8 +24,7 @@ function Dashboard() {
         <h1>Dashboard</h1>
 
         <h2>
-          {" "}
-          <p>Welcome, {username}!</p>
+          /// <p>Welcome, {username}!</p>
         </h2>
 
         <p className="work">
